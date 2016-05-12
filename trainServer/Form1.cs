@@ -83,7 +83,7 @@ namespace trainServer
                     {
                         myClientSocket.Send(Encoding.UTF8.GetBytes(backMessage));
                         console.AppendText(backMessage + " to " +
-                            myClientSocket.RemoteEndPoint.ToString());
+                            myClientSocket.RemoteEndPoint.ToString()+"\n");
                     }
                 }
                 catch (Exception ex)

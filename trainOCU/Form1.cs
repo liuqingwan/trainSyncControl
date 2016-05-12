@@ -99,5 +99,15 @@ namespace trainOCU
 
             return "";
         }
+        //向主控机车发消息
+        private void sendtoMain(string message)
+        {
+
+        }
+        //向从控机车发消息
+        private void sendtoFollow(string message)
+        {
+
+        }
     }
 }
