@@ -21,17 +21,20 @@ namespace trainServer
         private static Socket serverSocket;
         private IPAddress ip;
         private bool socktClosed = false;
+        private DB db = new DB();
 
         public ServerWin()
         {
             InitializeComponent();
 
             IPHostEntry ipe = Dns.GetHostEntry(Dns.GetHostName());
-            IPAddress ipAddress = ipe.AddressList[2];
+            IPAddress ipAddress = ipe.AddressList[1];
             this.ip = ipAddress;
             this.Text += " IP: " + ipAddress + "";
 
             CheckForIllegalCrossThreadCalls = false;
+
+           
         }
 
         private void ServerWin_Load(object sender, EventArgs e)
@@ -148,6 +151,7 @@ namespace trainServer
         private string registerHandler(string agrs)
         {
 
+            db.regesterTrain(2, "", 3);
             return "1";
         }
         //处理注销请求

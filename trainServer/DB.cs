@@ -7,7 +7,7 @@ namespace trainServer
     class DB
     {
         private String mysqlcon =
-            "database=sys;Password=citmisroot@mysql;User ID=root;server=127.0.0.1";
+            "database=train;Password=123456;User ID=root;server=127.0.0.1";
         private MySqlConnection conn;
         private MySqlCommand cmd;
 
