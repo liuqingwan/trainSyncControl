@@ -130,6 +130,7 @@ namespace trainServer
         //处理从OCU接收到的消息
         private string messageHandler(string receiveMessage)
         {
+            Console.WriteLine("pmm pmm " + receiveMessage);
             string result = "OK";
             string key = receiveMessage;
             switch (key)

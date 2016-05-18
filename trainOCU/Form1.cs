@@ -24,8 +24,10 @@ namespace trainOCU
 
         private void sendBtn_Click(object sender, EventArgs e)
         {
-            string backMessage = sendMessage(serverIP.Text, testSendText.Text, true);
-            console.AppendText("收到服务器返回： " + backMessage + "\n");
+            string mess = testSendText.Text;
+            string bac = register(mess);
+           // string backMessage = sendMessage(serverIP.Text, testSendText.Text, true);
+            console.AppendText("收到服务器返回： " + bac + "\n");
         }
 
         //发送消息函数
@@ -46,7 +48,7 @@ namespace trainOCU
             }
             try
             {
-                string sendMessage = message + DateTime.Now;
+                string sendMessage = message;
                 clientSocket.Send(Encoding.UTF8.GetBytes(sendMessage));
                 console.AppendText("向服务器发送消息：" + sendMessage + "\n");
 
@@ -78,8 +80,8 @@ namespace trainOCU
         //向服务器发送注册消息
         private string register(string message)
         {
-
-            return "";
+            return sendMessage(serverIP.Text, message, true);
+            
         }
         //向服务器发送注销消息
         private string logout(string message)
